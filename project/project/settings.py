@@ -135,3 +135,6 @@ AUTH_USER_MODEL = 'main.CustomUser'
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+
+CSRF_TRUSTED_ORIGINS = ['https://task-1a4g.onrender.com']
+CSRF_COOKIE_SECURE = True 
