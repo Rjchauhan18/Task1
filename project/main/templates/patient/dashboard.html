@@ -1,0 +1,38 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+    
+    <h1 class="text-3xl">Patient Details</h1>
+    
+    <div class="card lg:card-side bg-base-100 shadow-xl">
+        <figure>
+            <img
+                src="{{user.photo.url}}"
+                alt="{{user.username}}" />
+        </figure>
+        <div class="card-body">
+            
+            
+            <div class="flex justify-between">
+                <h2 class="card-title">Username     : {{ user.username }}</h2>
+            </div>
+
+            <div class="flex justify-between">
+                <h2 class="card-title">First Name       :       {{ user.first_name }}</h2>
+            </div>
+
+            <div class="flex justify-between item-center">
+                <h2 class="card-title">Last Name       :        {{ user.last_name }}</h2>
+            </div>
+
+            <div class="flex justify-between">
+                <h2 class="card-title">Email        : {{ user.email }}</h2>
+            </div>
+            
+            <div class="flex justify-between">
+                <h2 class="card-title">Role     : {{ user.role }}</h2>
+            </div>
+
+        </div>
+    </div>
+{% endblock content %}

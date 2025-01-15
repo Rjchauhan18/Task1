@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Clinic{% endblock title %}</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  {% if user.is_authenticated %}
+    <div class="navbar bg-base-100">
+        <div class="flex-1">
+          {% if user.role == 'Doctor' %}
+            <a class="btn btn-ghost text-xl" href="{% url "doctor_dashboard" %}">Dashboard</a>
+          {% elif user.role == 'Patient'  %}
+            <a class="btn btn-ghost text-xl" href="{% url "patient_dashboard" %}">Dashboard</a>
+          {% endif %}
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+                    <!-- Show Logout when user is logged in -->
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                
+                  </ul>
+                </div>
+              </div>
+  {% endif %}
+
+    {% block content %}
+        <div class="container mx-auto mt-8">
+            <p class="text-center text-lg">Welcome to the Clinic Dashboard</p>
+        </div>
+    {% endblock content %}
+</body>
+</html>
