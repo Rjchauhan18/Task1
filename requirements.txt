@@ -1,3 +1,5 @@
 django
-# sqlite
+mysqlclient
+wagtail
 pillow
+python-dotenv
