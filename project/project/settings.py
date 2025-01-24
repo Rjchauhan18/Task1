@@ -37,6 +37,22 @@ ALLOWED_HOSTS = ['task1-la4g.onrender.com', '0.0.0.0','127.0.0.1', '*']
 
 INSTALLED_APPS = [
     'main.apps.MainConfig',
+
+    # Wagtail
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail',
+    'modelcluster',
+    'taggit',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -146,3 +162,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
 CSRF_TRUSTED_ORIGINS = ['https://*']
 CSRF_COOKIE_SECURE = True 
+
+WAGTAIL_SITE_NAME='Blog'
+WAGTAILADMIN_BASE_URL='http://mywebsite.com'

@@ -96,4 +96,4 @@ def doctor_dashboard(request):
 
 @login_required(login_url='login')
 def patient_dashboard(request):
-    return render(request, 'patient/dashboard.html')
+    return render(request, 'patient/blog_page.html')
